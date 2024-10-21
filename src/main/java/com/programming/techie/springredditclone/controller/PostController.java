@@ -36,7 +36,7 @@ public class PostController {
     }
 
     @GetMapping(params = "subredditId")
-    public ResponseEntity<List<PostResponse>> getPostsBySubreddit(@RequestParam Long subredditId) {
+    public ResponseEntity<List<PostResponse>> getPostsBySubreddit(@RequestParam(name = "subredditId") Long subredditId) {
         return status(HttpStatus.OK).body(postService.getPostsBySubreddit(subredditId));
     }
 
